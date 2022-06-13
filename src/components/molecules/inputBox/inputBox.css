@@ -1,0 +1,15 @@
+.boxWrapper{
+    margin: 8px 0;
+    width: 100%;
+}
+
+.boxWrapper label {
+    /* border: 1px solid blue; */
+    font-weight: bold;
+}
+
+.boxWrapper input {
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;    
+}

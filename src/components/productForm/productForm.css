@@ -1,6 +1,43 @@
+.wrapper {
+   min-width: 300px;
+   max-width: 600px;
+
+   height: 75vh;
+   margin: auto;
+
+   padding: 12px;
+}
+
 .form {
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   height: 100%;
+   width: 100%;
+}
+
+.form input[type=submit]{
+   margin: 18px 0 24px 0;
+   padding: 16px 0;
+   background-color: black;
+   color: white;
+   width: 100%;
+}
+
+.form input[type=submit]:hover{
+   background-color: rgb(69, 69, 69);
+}
+
+.form .statusMsg {
+   font-weight: 500;
+   font-size: 21px;
+}
+
+.form .success{
+   color: green;
+}
+
+.form .failure{
+   color: red;
 }
