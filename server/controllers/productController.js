@@ -28,12 +28,12 @@ const getProduct = asyncHandler(async (req, res) => {
   }
   const product = await Product.findById(id);
 
-  if (!user) {
+  if (!product) {
     res.status(400);
     throw new Error("Product not found");
   }
 
-  res.status(200).json(user);
+  res.status(200).json(product);
 });
 
 // @desc    Update product

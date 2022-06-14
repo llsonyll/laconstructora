@@ -12,7 +12,7 @@ const productSchema = mongoose.Schema(
     sellPrice: Number,
     buyPrice: Number,
     quantity: Number,
-    location: [Schema.Types.Mixed],
+    location: [mongoose.Schema.Types.Mixed],
   },
   {
     timestamps: true,
