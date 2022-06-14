@@ -1,27 +1,28 @@
-const { MongoClient } = require("mongodb");
-const connectionString = process.env.ATLAS_URI;
-const client = new MongoClient(connectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// const { MongoClient } = require("mongodb");
+// const connectionString = process.env.ATLAS_URI;
 
-let dbConnection;
+// const client = new MongoClient(connectionString, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
-module.exports = {
-  connectToServer: function (callback) {
-    client.connect(function (err, db) {
-      if (err || !db) {
-        return callback(err);
-      }
+// let dbConnection;
 
-      dbConnection = db.db("la_constructora_db");
-      console.log("Successfully connected to MongoDB.");
+// module.exports = {
+//   connectToServer: function (callback) {
+//     client.connect(function (err, db) {
+//       if (err || !db) {
+//         return callback(err);
+//       }
 
-      return callback();
-    });
-  },
+//       dbConnection = db.db("la_constructora_db");
+//       console.log("Successfully connected to MongoDB.");
 
-  getDb: function () {
-    return dbConnection;
-  },
-};
+//       return callback();
+//     });
+//   },
+
+//   getDb: function () {
+//     return dbConnection;
+//   },
+// };

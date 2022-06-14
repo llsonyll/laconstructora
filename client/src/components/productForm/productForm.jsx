@@ -1,13 +1,13 @@
 import './productForm.css';
-import { useState  } from 'react'
+import { useState } from 'react'
 import InputBox from '../molecules/inputBox/inputBox';
 
-const ProductForm = () => {    
+const ProductForm = () => {
     const [product, setProduct] = useState({
         name: '',
         brand: '',
         quantity: 0,
-        unit: null,
+        unit: '',
         buyPrice: 0,
         sellPrice: 0,
         // tags: [],
@@ -22,14 +22,14 @@ const ProductForm = () => {
     const handleInputChangeFromEvent = (e) => {
         setProduct({
             ...product,
-            [e.target.name] : e.target.value,
+            [e.target.name]: e.target.value,
         })
     }
 
     const handleInputChange = (e) => {
         setProduct({
             ...product,
-            [e.name] : (e.value),
+            [e.name]: (e.value),
         })
     }
 
@@ -60,19 +60,19 @@ const ProductForm = () => {
     }
 
     return (<div className="wrapper">
-        <form className='form' onSubmit={handleSubmit}> 
-            <InputBox type='text' name='name' inputHandler={handleInputChange} placeholder='Ingrese nombre del producto'/>
-            <InputBox type='text' name='brand' inputHandler={handleInputChange} placeholder='Ingrese marca del producto'/>
-            <InputBox type='number' name='quantity' inputHandler={handleInputChange}/>
-            <InputBox type='number' name='buyPrice' inputHandler={handleInputChange}/>
-            <InputBox type='number' name='sellPrice' inputHandler={handleInputChange}/>
+        <form className='form' onSubmit={handleSubmit}>
+            <InputBox type='text' name='name' inputHandler={handleInputChange} placeholder='Ingrese nombre del producto' />
+            <InputBox type='text' name='brand' inputHandler={handleInputChange} placeholder='Ingrese marca del producto' />
+            <InputBox type='number' name='quantity' inputHandler={handleInputChange} />
+            <InputBox type='number' name='buyPrice' inputHandler={handleInputChange} />
+            <InputBox type='number' name='sellPrice' inputHandler={handleInputChange} />
             {/* <label htmlFor="brand">Brand</label>
             <input type="text" name='brand' value={product.brand} onChange={handleInputChange} /> <button onClick={addBrand}> Add </button> */}
             {/* <label htmlFor="tags">Tags</label>
             <input type="text" name='tags' value={tag} onChange={handleInputTags} /> <button onClick={addTag}> Add </button> */}
             <label htmlFor="unit">Unit</label>
             <select name="unit" id="unit" value={product.unit} onChange={handleInputChangeFromEvent}>
-                <option value={null}>Seleccione unidad</option>
+                <option value={''}>Seleccione unidad</option>
                 <option value="unidad">Por Unidad</option>
                 <option value="kilogramo">Kilogramo</option>
                 <option value="docena">Docena</option>
@@ -81,11 +81,11 @@ const ProductForm = () => {
                 {/* <option value="caja">Caja</option> */}
             </select>
             {/* <label htmlFor="productImg">Product Image</label> */}
-            {/* <input type="file" name="productImg" id="productImg" onChange={handleFileUpdate}/> */}            
+            {/* <input type="file" name="productImg" id="productImg" onChange={handleFileUpdate}/> */}
             <input type="submit" value="Enviar" />
             {/* { errorFile ? <div className="">Error</div>  : null } */}
 
-            {/* <div className={true ? 'statusMsg success' : 'statusMsg failure'}> 
+            {/* <div className={true ? 'statusMsg success' : 'statusMsg failure'}>
                 { true ? 'Exito al agregar producto' : 'Error al subir datos'}
             </div> */}
         </form>
